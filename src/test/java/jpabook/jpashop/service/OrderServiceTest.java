@@ -46,7 +46,7 @@ class OrderServiceTest {
     Order getOrder = orderRepository.findOne(orderId);
 
     //상품 주문 시 상태는 ORDER
-    assertThat(OrderStatus.ORDER.name()).isEqualTo(getOrder.getOrderStatus().name());
+    assertThat(OrderStatus.ORDER.name()).isEqualTo(getOrder.getStatus().name());
     //주문한 상품 종류 수가 정확해야 한다.
     assertThat(1).isEqualTo(getOrder.getOrderItems().size());
     //주문 가격은 가격 * 수량이다.
@@ -85,7 +85,7 @@ class OrderServiceTest {
     //then
     Order getOrder = orderRepository.findOne(orderId);
     //주문 취소 시 상태는 CANCEL
-    assertThat(getOrder.getOrderStatus()).isEqualTo(OrderStatus.CANCEL);
+    assertThat(getOrder.getStatus()).isEqualTo(OrderStatus.CANCEL);
     //주문 취소된 상품은 그만큼 재고가 증가해야한다.
     assertThat(book.getStockQuantity()).isEqualTo(10);
   }

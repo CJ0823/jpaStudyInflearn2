@@ -1,9 +1,7 @@
 package jpabook.jpashop.repository;
 
 import jpabook.jpashop.domain.Order;
-import jpabook.jpashop.domain.item.Item;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.querydsl.QuerydslUtils;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
